@@ -10,7 +10,7 @@ $ npm install
 $ npm start
 ```
 
-which starts a webpack-development-server that's serving the app on
-`http://localhost:8080`.
+which starts a webpack-development-server that's serving the app at
+`http://localhost:8080/webpack-dev-server/`.
 
 [faq]: https://github.com/staltz/cycle/blob/master/docs/faq.md#how-to-implement-routing-and-manage-different-pages

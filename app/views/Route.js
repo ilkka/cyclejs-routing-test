@@ -4,23 +4,19 @@ let {Rx, h} = Cycle;
 
 let View = Cycle.createView((Model, Page1, Page2) => (
     {
-        vtree$: Model.get('route$').flatMap(route => {
-            console.log(`RouteView got ${route}`);
-            return Rx.Observable.merge(
-                Page1.get('vtree$').filter(() => route === 'page1'),
-                Page2.get('vtree$').filter(() => route === 'page2')
-            );
-        })
+        vtree$: Model.get('route$').combineLatest(
+            Page1.get('vtree$'),
+            Page2.get('vtree$'),
+            (route, page1, page2) =>
+                route === 'page1' ? page1 : page2
+        )
     }
 ));
 
 let Intent = Cycle.createIntent((Page1Intent, Page2Intent) => (
     {
         changeRoute$: Rx.Observable.merge(
-            Page1Intent.get('goToPage2$').map(() => {
-                console.log('RouteIntent: to page2');
-                return 'page2';
-            }),
+            Page1Intent.get('goToPage2$').map(() => 'page2'),
             Page2Intent.get('goToPage1$').map(() => 'page1')
         )
     }

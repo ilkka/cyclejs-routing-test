@@ -4,14 +4,13 @@ let {Rx, h} = Cycle;
 
 let View = Cycle.createView((Model) => (
     {
-        vtree$: Model.get('title$').map(title => {
-            console.log('Page2View emitting DOM');
-            return h('div', [
+        vtree$: Model.get('title$').map(title =>
+            h('div', [
                 h('h1', title),
                 h('p', 'Page 2 content here'),
                 h('button.page1-btn', 'Go to page 1')
-            ]);
-        })
+            ])
+        )
     }
 ));
 
