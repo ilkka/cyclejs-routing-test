@@ -11,6 +11,6 @@ $ npm start
 ```
 
 which starts a webpack-development-server that's serving the app on
-[http://localhost:8080].
+`http://localhost:8080`.
 
 [faq]: https://github.com/staltz/cycle/blob/master/docs/faq.md#how-to-implement-routing-and-manage-different-pages
