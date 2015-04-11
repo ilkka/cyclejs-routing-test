@@ -25,6 +25,7 @@
     "webpack-dev-server": "^1.8.0"
   },
   "dependencies": {
-    "cyclejs": "^0.18.2"
+    "cyclejs": "^0.18.2",
+    "swarm": "^0.3.25"
   }
 }

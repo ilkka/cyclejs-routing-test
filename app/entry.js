@@ -4,6 +4,11 @@ require('./styles/main.scss');
 import Cycle from 'cyclejs';
 let {Rx, h} = Cycle;
 
+import Swarm from 'swarm';
+
+let swarmHost = new Swarm.Host('acdc1234');
+swarmHost.connect('ws://localhost:8000/');
+
 import {RouteView, RouteIntent} from './views/Route';
 import RouteModel from './models/Route';
 import {Page1View, Page1Intent} from './views/Page1';
