@@ -25,6 +25,6 @@
     "webpack-dev-server": "^1.8.0"
   },
   "dependencies": {
-    "cyclejs": "^0.20.0"
+    "cyclejs": "^0.20.1"
   }
 }
